@@ -1,3 +1,4 @@
+import { GoBell, GoCloud, GoDatabase } from "react-icons/go";
 import Button from "./Button";
 
 function App() {
@@ -5,6 +6,7 @@ function App() {
     <div>
       <div>
         <Button primary rounded>
+          <GoBell />
           Click Here!
         </Button>
       </div>
@@ -12,10 +14,14 @@ function App() {
         <Button secondary>Click Here!</Button>
       </div>
       <div>
-        <Button success>Click Here!</Button>
+        <Button success>
+          <GoDatabase />
+          Click Here!
+        </Button>
       </div>
       <div>
         <Button warning rounded outlined>
+          <GoCloud />
           Click Here!
         </Button>
       </div>
