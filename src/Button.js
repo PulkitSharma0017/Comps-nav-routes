@@ -8,7 +8,11 @@ function Button({
   outlined,
   rounded,
 }) {
-  return <button>{children}</button>;
+  return (
+    <button className="border border-blue-600 bg-blue-500 px-3 py-1.5 text-white">
+      {children}
+    </button>
+  );
 }
 
 Button.propTypes = {
@@ -22,7 +26,7 @@ Button.propTypes = {
 
     if (count > 1) {
       throw new Error(
-        "Only one of primary, secondary, success, warning, danger can be true"
+        "Only one of primary, secondary, success, warning, danger can be true",
       );
     }
   },
