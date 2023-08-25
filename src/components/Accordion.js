@@ -5,11 +5,16 @@ function Accordion({ items }) {
   const [expandedIndex, setExpandedIndex] = useState(-1);
 
   const handleClick = (nextIndex) => {
-    if (expandedIndex === nextIndex) {
-      setExpandedIndex(-1);
-    } else {
-      setExpandedIndex(nextIndex);
-    }
+    console.log("STALE version of expandedIndex", expandedIndex);
+
+    setExpandedIndex((currentExpandedItem) => {
+      console.log("UPDATED version of expandedIndex", expandedIndex);
+      if (currentExpandedItem === nextIndex) {
+        return -1;
+      } else {
+        return nextIndex;
+      }
+    });
   };
 
   const renderedItems = items.map((item, index) => {
