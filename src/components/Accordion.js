@@ -12,25 +12,28 @@ function Accordion({ items }) {
     const isExpanded = index === expandedIndex;
 
     const icon = (
-      <span>{isExpanded ? <GoChevronDown /> : <GoChevronLeft />}</span>
+      <span className="text-2xl">
+        {isExpanded ? <GoChevronDown /> : <GoChevronLeft />}
+      </span>
     );
 
     return (
       <div key={item.id}>
         <div
+          className="flex cursor-pointer items-center justify-between border-b bg-gray-50 p-3"
           onClick={() => {
             handleClick(index);
           }}
         >
-          {icon}
           {item.label}
+          {icon}
         </div>
-        {isExpanded && <div>{item.content}</div>}
+        {isExpanded && <div className="border-b p-5">{item.content}</div>}
       </div>
     );
   });
 
-  return <div>{renderedItems}</div>;
+  return <div className="rounded border-x border-t">{renderedItems}</div>;
 }
 
 export default Accordion;
