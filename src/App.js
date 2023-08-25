@@ -1,5 +1,7 @@
+import Dropdown from "./components/Dropdown";
+
 function App() {
-  return <App />;
+  return <Dropdown />;
 }
 
 export default App;
