@@ -5,7 +5,7 @@ function Sidebar() {
     { label: "Dropdown", path: "/" },
     { label: "Accordion", path: "/accordion" },
     { label: "Buttons", path: "/buttons" },
-    { label: "Flex", path: "/flex" },
+    { label: "Modal", path: "/modal" },
     { label: "Table", path: "/table" },
     { label: "Search", path: "/search" },
   ];
