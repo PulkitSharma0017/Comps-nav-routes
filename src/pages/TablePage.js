@@ -8,9 +8,28 @@ function TablePage() {
     { name: "Lime", color: "bg-green-400", score: 4 },
   ];
 
+  const config = [
+    {
+      label: "Name",
+      render: (dataObj) => dataObj.name,
+    },
+    {
+      label: "Color",
+      render: (dataObj) => <div className={`m-2 p-3 ${dataObj.color}`}></div>,
+    },
+    {
+      label: "Score",
+      render: (dataObj) => dataObj.score,
+    },
+  ];
+
+  const keyFn = (dataObj) => {
+    return dataObj.name;
+  };
+
   return (
     <div>
-      <Table data={data} />
+      <Table data={data} config={config} keyFn={keyFn} />
     </div>
   );
 }
