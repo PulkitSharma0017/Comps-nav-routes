@@ -1,4 +1,3 @@
-// import Table from "./Table";
 import SortableTable from "../components/SortableTable";
 
 function TablePage() {
