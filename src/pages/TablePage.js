@@ -13,6 +13,7 @@ function TablePage() {
     {
       label: "Name",
       render: (dataObj) => dataObj.name,
+      sortValue: (dataObj) => dataObj.name,
     },
     {
       label: "Color",
@@ -21,7 +22,7 @@ function TablePage() {
     {
       label: "Score",
       render: (dataObj) => dataObj.score,
-      header: () => <th className="bg-red-500">Score</th>,
+      sortValue: (dataObj) => dataObj.score,
     },
   ];
 
