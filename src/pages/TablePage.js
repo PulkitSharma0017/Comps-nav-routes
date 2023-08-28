@@ -20,6 +20,7 @@ function TablePage() {
     {
       label: "Score",
       render: (dataObj) => dataObj.score,
+      header: () => <th className="bg-red-500">Score</th>,
     },
   ];
 
