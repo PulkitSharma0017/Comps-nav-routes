@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Table from "./Table";
+import { BsCaretDownFill, BsCaretUpFill } from "react-icons/bs";
 
 function SortableTable(props) {
   const [sortOrder, setSortOrder] = useState(null);
@@ -26,8 +27,14 @@ function SortableTable(props) {
     return {
       ...column,
       header: () => (
-        <th onClick={() => handleClick(column.label)}>
-          {column.label} IS SORTABLE
+        <th
+          className="cursor-pointer hover:bg-gray-200"
+          onClick={() => handleClick(column.label)}
+        >
+          <div className="flex items-center">
+            {getIcons(column.label, sortBy, sortOrder)}
+            {column.label}
+          </div>
         </th>
       ),
     };
@@ -56,6 +63,38 @@ function SortableTable(props) {
       <Table {...props} data={sortedData} config={updatedConfig} />
     </div>
   );
+}
+
+function getIcons(label, sortBy, sortOrder) {
+  if (label !== sortBy) {
+    return (
+      <div>
+        <BsCaretUpFill />
+        <BsCaretDownFill />
+      </div>
+    );
+  }
+
+  if (sortOrder === null) {
+    return (
+      <div>
+        <BsCaretUpFill />
+        <BsCaretDownFill />
+      </div>
+    );
+  } else if (sortOrder === "asc") {
+    return (
+      <div>
+        <BsCaretUpFill />
+      </div>
+    );
+  } else if (sortOrder === "desc") {
+    return (
+      <div>
+        <BsCaretDownFill />
+      </div>
+    );
+  }
 }
 
 export default SortableTable;
