@@ -16,11 +16,11 @@ const reducer = (state, action) => {
     case DECREMENT_COUNT:
       state.count = state.count - 1;
       return;
-    case SET_VALUE_TO_ADD:
+    case ADD_VALUE_TO_COUNT:
       state.count = state.count + state.valueToAdd;
       state.valueToAdd = 0;
       return;
-    case ADD_VALUE_TO_COUNT:
+    case SET_VALUE_TO_ADD:
       state.valueToAdd = action.payload;
       return;
     default:
